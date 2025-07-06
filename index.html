@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonadPets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo"> <h1>MonadPets</h1> </div>
+        <button class="wallet-connect" id="connectWalletBtn"> <i class="fas fa-wallet"></i> <span>Connect Wallet</span> </button>
+    </header>
+    <div class="container">
+        <section class="pets-section">
+            <h2 class="section-title">Your Companions</h2>
+            <div class="pet-grid" id="petsContainer"></div>
+            <div class="no-pets" id="noPetsMessage" style="display: none;"> <i class="fas fa-cat"></i> <h2>No Pets Found</h2> <p>Connect your wallet to see your MonadPets or mint a new one below!</p> </div>
+        </section>
+        <section class="mint-section">
+            <h2 class="section-title">Mint a New Companion</h2>
+            <div class="pet-types" id="mintContainer"></div>
+        </section>
+    </div>
+    <div class="modal-overlay" id="walletModal">
+        <div class="modal-content">
+            <div class="modal-header"><h2>Connect a Wallet</h2><button class="close-modal-btn" id="closeWalletModalBtn">&times;</button></div>
+            <div id="walletList"><p>No wallet providers found.</p></div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="minigameModal">
+        <div class="modal-content minigame-container">
+            <div class="modal-header">
+                <h2>Play with your Pet!</h2>
+                <span id="throwCounter">Throws: 0 / 3</span>
+                <button class="close-modal-btn" id="closeMinigameBtn">&times;</button>
+            </div>
+            <div class="game-area" id="gameArea">
+                <div id="gamePet"><img src="" alt="Your Pet"></div>
+                <div id="gameBall"></div>
+            </div>
+            <div class="minigame-actions"> <button class="btn btn-play" id="throwBallBtn" style="width: 50%;">Throw Ball</button> </div>
+        </div>
+    </div>
+    <div id="notification-container"></div>
+    
+    <footer>
+        <p>
+            Developed by <a href="https://x.com/0xGustavo" target="_blank" rel="noopener noreferrer">0xGus</a> | 
+            <a href="https://github.com/0xGus/Monad-Pets" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </p>
+    </footer>
+
+    <script src="https://unpkg.com/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
